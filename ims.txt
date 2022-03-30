@@ -1,0 +1,55 @@
+create table user(
+    user_id number(10),
+    user_name varchar2(20),
+    email varchar2(30),
+   mobile number(10),
+   password varchar(12),
+    CONSTRAINT user_pk PRIMARY KEY (user_id)
+);
+
+create table admin(
+
+    aid varchar2(10),
+    username varchar2(30),
+    password varchar2(10),
+    CONSTRAINT admin_pk PRIMARY KEY (aid),
+);
+
+create table login(
+
+    userName varchar2(10),
+    password varchar2(10),
+    CONSTRAINT admin_pk PRIMARY KEY (userName),
+);
+create table policies(
+
+   policy_id number(10),
+    policy_name varchar2(30),
+    category varchar2(10),
+    CONSTRAINT policy_pk PRIMARY KEY (policy_id),
+);
+
+create table category(
+     category varchar2(20),
+     CONSTRAINT category_pk PRIMARY KEY (category)
+);
+
+create table queries(
+
+   userName varchar2(10),
+    query_id number(30),
+    question varchar2(10),
+    CONSTRAINT query_pk PRIMARY KEY (userName),
+);
+
+create table approvals(
+
+   userName varchar2(10),
+    policy_id number(30),
+    request_id number(10),
+    date date,
+    CONSTRAINT approvals_pk PRIMARY KEY (userName),
+);
+
+
+
